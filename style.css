@@ -357,7 +357,7 @@ header {
 }
 
 .carousel .list .item:nth-child(2) img {
-  transition: right 0.5s;
+  transition: all 0.5s;
 }
 
 .carousel.showDetail .list .item:nth-child(2) img {
@@ -475,6 +475,7 @@ header {
   position: relative;
   height: 100%;
   width: 100%;
+  overflow: hidden;
   margin-top: 4rem;
   background-color: rgba(34, 0, 255, 0.256);
   border-radius: 100% 100% 0 0/10% 10% 0 0;
@@ -770,18 +771,14 @@ h2 {
 
 .vid-sec {
   padding-top: 10rem;
-  text-align: center; /* Center heading and video on small screens */
-}
-
-.vid-sec h2 {
-  font-size: 3em; /* Large font for desktop */
+  text-align: center;
 }
 
 .vid-sec video {
   width: 100%;
-  max-width: 1900px; /* Ensure it doesn't exceed original width */
+  max-width: 1900px;
   padding-top: 5rem;
-  border-radius: 15px; /* Optional: add some styling for smaller screens */
+  border-radius: 15px;
 }
 
 /* Key Features Section */
@@ -885,105 +882,368 @@ h2 {
 /* Footer */
 
 footer {
-  background-color: #333; /* Dark background color */
-  color: #f0f0f0; /* Light text color for contrast */
-  text-align: center; /* Center-aligns text */
-  padding: 4rem 0; /* Adds vertical space */
-  font-family: Arial, sans-serif; /* Sets a clean font */
-  font-size: 14px; /* Standard text size */
+  background-color: #333;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 2rem 0;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
 }
 
 footer p {
-  margin: 0; /* Removes default margin on <p> */
+  margin: 0;
 }
 
 footer p:hover {
-  color: #bd9cff; /* Light blue color on hover */
+  color: #bd9cff;
 }
 
 /* Responsive styling */
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
+  /* Carousel */
   .carousel {
-    height: 600px; /* Adjust carousel height */
+    height: 630px;
   }
 
   .carousel .list .item img {
-    width: 60%; /* Increase image width */
+    width: 40%;
   }
 
   .carousel .list .item .intro {
-    width: 300px; /* Reduce intro width */
+    width: 300px;
   }
 
-  .carousel .list .item .intro .title {
-    font-size: 1.8em; /* Adjust font sizes */
+  .carousel.showDetail .list .item:nth-child(2) img {
+    right: 55%;
   }
 
-  .carousel .list .item .intro .topic {
-    font-size: 3.5em;
+  .carousel.showDetail .list .item:nth-child(2) .detail .specs div {
+    transform: translateX(-100px);
   }
 
-  .arrows {
-    width: 700px; /* Adjust width for arrows container */
+  /* Carousel BG */
+  .carousel::before {
+    width: 400px;
+    height: 200px;
   }
 
+  /* Glass Window */
+  h2 {
+    font-size: 2.5em;
+  }
+
+  .glass-tab {
+    padding: 30px;
+    max-width: 800px;
+  }
+
+  .card {
+    width: 300px;
+    height: 400px;
+  }
+
+  .card img {
+    max-height: 150px;
+  }
+
+  .card h3 {
+    font-size: 1.3rem;
+  }
+
+  .card p {
+    font-size: 1rem;
+  }
+
+  /* Main Banner */
   .banner h3 {
-    font-size: 2rem; /* Reduce font size */
-    top: 12rem; /* Adjust position */
-    left: 3rem; /* Move closer to the edge */
+    font-size: 2.5rem;
+    top: 15rem;
+    left: 5rem;
   }
 
   .banner p {
-    font-size: 1.2rem; /* Reduce font size */
-    width: 40%; /* Increase width to fit more text */
-    top: 15rem; /* Adjust position */
-    left: 3rem; /* Move closer to the edge */
+    font-size: 1.2rem;
+    width: 40%;
+    top: 19rem;
+    left: 5rem;
   }
 
-  .list {
-    padding-top: 3rem; /* Reduced top padding */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns in the first row */
-    grid-template-rows: auto auto; /* Two rows */
-    gap: 1rem; /* Spacing between items */
-    justify-content: center; /* Center the grid */
-  }
-
-  .item {
-    margin: 0.5rem; /* Increase margin for better spacing on small screens */
-    flex: 1 1 45%; /* Flex items to occupy up to 45% width */
-  }
-
+  /* Animated List */
   .product {
-    width: 200px; /* Scale down width */
-    height: 300px; /* Scale down height */
-    padding: 30px; /* Reduce padding */
-  }
-
-  .product img {
-    max-height: 120px; /* Adjust image height */
+    padding: 30px;
+    width: 150px;
+    height: 230px;
   }
 
   .product h3 {
-    font-size: 1.2rem; /* Adjust font size */
+    font-size: 0.8rem;
   }
 
   .product p {
-    font-size: 1rem; /* Adjust font size */
+    font-size: 0.6rem;
   }
 
-  .vid-sec {
-    padding-top: 5rem;
+  /* Key Features Section */
+  .key-features {
+    margin-top: 0px;
   }
 
-  .vid-sec h2 {
-    font-size: 2.5em; /* Slightly smaller heading */
+  .shop-details .attribute {
+    max-width: 300px;
+    padding: 10px 10px 0 10px;
   }
 
-  .vid-sec video {
+  .shop-details .attribute img {
+    height: 80px;
+    margin-bottom: 20px;
+  }
+
+  .shop-details .attribute h3 {
+    font-size: 1.2rem;
+  }
+
+  .shop-details .attribute p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Carousel */
+  .carousel {
+    height: 100vh;
+  }
+
+  .carousel .list {
+    top: 0;
+    max-width: 80%;
+    height: 100%;
+  }
+
+  .carousel .list .item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+  }
+
+  .carousel .list .item img {
+    width: 60%;
+    right: 20%;
+    top: 65%;
+    transform: translateY(-50%);
+  }
+
+  .carousel .list .item .intro {
+    top: 30%;
+    width: 100%;
+  }
+
+  #prev,
+  #next {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #back {
+    font-size: 1.5rem;
+    transform: translateY(-80px);
+  }
+
+  .carousel .list .item .intro .title {
+    font-size: 2em;
+  }
+
+  .carousel .list .item .intro .topic {
+    font-size: 4em;
+    padding: 20px 0;
+  }
+
+  .carousel .list .item .intro .desc {
+    font-size: 1.5em;
+  }
+
+  .carousel .list .item .intro .seeMore {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .carousel.showDetail .list .item:nth-child(2) img {
+    width: 85%;
+    right: 10%;
+    top: 30%;
+  }
+
+  .carousel.showDetail .list .item:nth-child(2) .detail {
+    width: 90%;
+    top: 73%;
+  }
+
+  .carousel.showDetail .list .item:nth-child(2) .detail .title {
+    font-size: 4em;
+    padding-bottom: 20px;
+  }
+
+  .carousel.showDetail .list .item:nth-child(2) .detail .desc {
+    font-size: 1.5em;
+  }
+
+  .carousel.showDetail .list .item:nth-child(2) .detail .specs {
+    justify-content: end;
+  }
+
+  .carousel.showDetail .list .item:nth-child(2) .detail .specs div {
+    margin: 20px 0;
+    transform: translateX(0);
+  }
+
+  .carousel.showDetail .list .item:nth-child(2) .checkout button {
+    font-size: 1rem;
+  }
+
+  .carousel::before {
+    width: 700px;
+    height: 500px;
+    top: 50%;
+    left: 20%;
+    opacity: 0.8;
+  }
+
+  .carousel.showDetail::before {
+    transform: translate(-15%, -90%) rotate(60deg);
+  }
+
+  /* Main Banner */
+  .banner img {
+    margin-top: 1rem;
+  }
+
+  .banner h3 {
+    font-size: 2rem;
+    top: 12rem;
+    left: 3rem;
+  }
+
+  .banner p {
+    font-size: 1.2rem;
+    top: 15rem;
+    left: 3rem;
+  }
+
+  /* Animated List */
+  .list {
+    transform: translateX(-40px);
     padding-top: 3rem;
-    border-radius: 10px;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .product {
+    padding: 20px;
+    width: 170px;
+    height: 240px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .product h3 {
+    font-size: 1rem;
+  }
+
+  .product p {
+    font-size: 0.8rem;
+  }
+
+  .list .item {
+    transition: 0.3s;
+    filter: brightness(1);
+  }
+
+  .list .item:hover {
+    filter: brightness(1);
+    transform: translateY(-50px);
+    z-index: 10;
+  }
+
+  .list .item:hover + * {
+    filter: brightness(0.7);
+    transform: translateZ(0) rotateY(0);
+  }
+
+  .list .item:hover + * + * {
+    filter: brightness(0.5);
+    transform: translateZ(0) rotateY(0);
+  }
+
+  .list .item:hover + * + * + * {
+    filter: brightness(0.3);
+    transform: translateZ(0) rotateY(0);
+  }
+
+  .list .item:hover + * + * + * + * {
+    filter: brightness(0.2);
+  }
+
+  .list .item:hover + * + * + * + * + * {
+    filter: brightness(0.2);
+  }
+
+  .list .item:hover + * + * + * + * + * + * {
+    filter: brightness(0.2);
+  }
+
+  .list .item:has(+ *:hover) {
+    filter: brightness(0.7);
+    transform: translateZ(0) rotateY(0);
+  }
+
+  .list .item:has(+ * + *:hover) {
+    filter: brightness(0.5);
+    transform: translateZ(0) rotateY(0);
+  }
+
+  .list .item:has(+ * + * + *:hover) {
+    filter: brightness(0.3);
+    transform: translateZ(0) rotateY(0);
+  }
+
+  .list .item:has(+ * + * + * + *:hover) {
+    filter: brightness(0.2);
+  }
+
+  .list .item:has(+ * + * + * + * + *:hover) {
+    filter: brightness(0.2);
+  }
+
+  .list .item:has(+ * + * + * + * + * + *:hover) {
+    filter: brightness(0.2);
+  }
+
+  /* Key Features Section */
+  .key-features {
+    margin-top: 0px;
+  }
+
+  .shop-details .attribute {
+    max-width: 230px;
+    padding: 5px 5px 0 5px;
+  }
+
+  .shop-details .attribute img {
+    height: 80px;
+    margin-bottom: 20px;
+  }
+
+  .shop-details .attribute h3 {
+    font-size: 1.3rem;
+  }
+
+  .shop-details .attribute p {
+    font-size: 0.9rem;
   }
 }
 
@@ -1005,154 +1265,100 @@ footer p:hover {
     padding-bottom: 0.5rem;
   }
 
-  .carousel {
-    height: 500px;
-  }
-
-  .carousel .list {
-    max-width: 90%; /* Expand to fill screen */
-  }
-
+  /* Carousel */
   .carousel .list .item {
-    width: 100%; /* Make item full-width */
+    top: -70px;
+    font-size: 11px;
   }
 
   .carousel .list .item img {
-    width: 70%; /* Further increase image width */
+    width: 55%;
+    right: 30%;
+    top: 70%;
   }
 
-  .carousel .list .item .intro {
-    width: 250px;
+  #back {
+    font-size: 1.2rem;
   }
 
-  .carousel .list .item .intro .title {
-    font-size: 1.5em;
+  .carousel .list .item .intro .desc {
+    font-size: 1.8em;
   }
 
-  .carousel .list .item .intro .topic {
-    font-size: 2.5em;
-  }
-
-  .arrows {
-    width: 100%; /* Full width for arrow container */
-  }
-
-  .carousel.showDetail .list .item:nth-child(2) {
-    width: 85%; /* Adjust width for smaller screens */
+  .carousel .list .item .intro .seeMore {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
   }
 
   .carousel.showDetail .list .item:nth-child(2) .detail {
-    width: 50%; /* Make the detail section wider on smaller screens */
-    right: -20px; /* Adjust right positioning */
+    top: 68%;
   }
 
-  .carousel.showDetail .list .item:nth-child(2) .detail .title {
-    font-size: 3em; /* Reduce title font size */
+  .carousel.showDetail .list .item:nth-child(2) img {
+    width: 65%;
+    right: 40%;
+    top: 35%;
   }
 
-  .carousel.showDetail .list .item:nth-child(2) .detail .specs div {
-    width: 70px; /* Adjust width of specs */
+  .carousel.showDetail .list .item:nth-child(2) .detail .specs {
+    font-size: 1rem;
   }
 
   .carousel.showDetail .list .item:nth-child(2) .checkout button {
-    padding: 5px 8px; /* Adjust button padding */
+    font-size: 0.9rem;
   }
 
-  .container {
-    margin-top: 0; /* Decrease top margin on smaller screens */
-    border-radius: 0 0 0 0; /* Slightly reduce border radius */
+  .carousel::before {
+    width: 150px;
+    height: 80px;
   }
 
-  .radial-gradient,
-  .radial-gradient-2,
-  .radial-gradient-3 {
-    opacity: 0;
+  .carousel.showDetail::before {
+    transform: translate(-30%, -60%) rotate(60deg);
   }
 
-  section {
-    padding-top: 3rem; /* Reduce padding on smaller screens */
-  }
-
-  h2 {
-    font-size: 2.2em; /* Reduce font size of heading */
-  }
-
+  /* Glass Window */
   .glass-tab {
-    flex-direction: column; /* Stack tabs vertically */
-    padding: 30px; /* Reduce padding */
-    gap: 15px; /* Adjust gap between elements */
+    flex-direction: column;
+    padding: 30px;
+    gap: 15px;
   }
 
   .card {
-    width: 80%; /* Increase card width for smaller screens */
-    height: auto; /* Allow height to adjust based on content */
-    padding: 30px; /* Reduce padding */
+    width: 100%;
+    height: auto;
+    padding: 30px;
   }
 
   .card h3 {
-    font-size: 1.3rem; /* Slightly smaller font size for headings */
+    font-size: 1.3rem;
   }
 
   .card p {
-    font-size: 1rem; /* Slightly smaller font size for text */
+    font-size: 1rem;
   }
 
+  /* Main Banner */
   .banner img {
-    margin-top: 3rem; /* Reduce top margin */
-    border-radius: 50% 50% 40% 40% / 40% 40% 60% 60%; /* Adjust shape for smaller screens */
+    margin-top: 0;
+    border-radius: 50% 50% 40% 40% / 40% 40% 60% 60%;
   }
 
   .banner h3 {
-    font-size: 2rem; /* Reduce font size */
-    top: 12rem; /* Adjust position */
-    left: 3rem; /* Move closer to the edge */
+    font-size: 2rem;
+    top: 6rem;
+    left: 3rem;
   }
 
   .banner p {
-    font-size: 1.2rem; /* Reduce font size */
-    width: 40%; /* Increase width to fit more text */
-    top: 15rem; /* Adjust position */
-    left: 3rem; /* Move closer to the edge */
-  }
-
-  .list {
-    padding-top: 3rem; /* Reduced top padding */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns in the first row */
-    grid-template-rows: auto auto; /* Two rows */
-    gap: 1rem; /* Spacing between items */
-    justify-content: center; /* Center the grid */
-  }
-
-  .item {
-    margin: 0.5rem; /* Increase margin for better spacing on small screens */
-    flex: 1 1 45%; /* Flex items to occupy up to 45% width */
-  }
-
-  .product {
-    width: 160px; /* Scale down width */
-    height: 240px; /* Scale down height */
-    padding: 30px; /* Reduce padding */
-  }
-
-  .product img {
-    max-height: 80px; /* Adjust image height */
-  }
-
-  .product h3 {
-    font-size: 0.9rem; /* Adjust font size */
-  }
-
-  .product p {
-    font-size: 0.7rem; /* Adjust font size */
+    font-size: 1.2rem;
+    width: 40%;
+    top: 9rem;
+    left: 3rem;
   }
 
   .vid-sec {
     padding-top: 3rem;
-  }
-
-  .vid-sec h2 {
-    font-size: 2em; /* Smaller heading for mobile */
   }
 
   .vid-sec video {
@@ -1162,211 +1368,182 @@ footer p:hover {
 }
 
 @media (max-width: 480px) {
+  /* Header */
   header {
-    max-width: 100%;
     padding-top: 0.5rem;
   }
 
   .navLink {
-    margin-left: 10px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    margin-left: 30px;
   }
 
   .logo {
     font-size: 1rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0;
   }
 
-  .carousel {
-    height: 400px;
+  /* Carousel */
+  .carousel .list .item {
+    top: -50px;
+    font-size: 8px;
   }
 
   .carousel .list .item img {
-    width: 80%; /* Maximize image width on mobile */
+    width: 80%;
+    right: 20%;
   }
 
-  .carousel .list .item .intro {
-    width: 200px; /* Reduce width for text area */
+  #back {
+    font-size: 1rem;
+    transform: translateY(-60px);
   }
 
-  .carousel .list .item .intro .title {
-    font-size: 1.2em;
+  .carousel .list .item .intro .seeMore {
+    font-size: 1rem;
   }
 
-  .carousel .list .item .intro .topic {
-    font-size: 2em;
-  }
-
-  .carousel .list .item .intro .desc {
-    font-size: 0.8em;
-  }
-
-  #prev,
-  #next {
-    width: 30px;
-    height: 30px; /* Adjust arrow button size */
-  }
-
-  .arrows {
-    width: 100%;
-  }
-
-  .carousel.showDetail .list .item:nth-child(2) {
-    width: 100%; /* Full width on mobile */
+  .carousel.showDetail .list .item:nth-child(2) img {
+    width: 80%;
+    right: 0;
+    top: 35%;
   }
 
   .carousel.showDetail .list .item:nth-child(2) .detail {
-    width: 80%; /* Wider detail section on mobile */
-    right: 0; /* Align detail section */
+    top: 75%;
   }
 
-  .carousel.showDetail .list .item:nth-child(2) .detail .title {
-    font-size: 2.5em; /* Further reduce title font size */
-  }
-
-  .carousel.showDetail .list .item:nth-child(2) .detail .specs div {
-    width: auto; /* Make specs flexible on mobile */
-  }
-
-  .carousel.showDetail .list .item:nth-child(2) .checkout button {
-    padding: 5px 5px; /* Adjust button padding */
-  }
-
-  .container {
-    margin-top: 0; /* Further decrease top margin on mobile */
-    border-radius: 0 0 0 0;
-  }
-
-  .grid-overlay {
-    border-radius: 0 0 0 0;
-  }
-
-  .radial-gradient,
-  .radial-gradient-2,
-  .radial-gradient-3 {
-    opacity: 0;
-  }
-
-  section {
-    padding-top: 2rem; /* Further reduce padding on mobile */
-  }
-
-  h2 {
-    font-size: 1.8em; /* Further reduce font size */
-  }
-
-  .glass-tab {
-    padding: 20px; /* Further reduce padding */
-  }
-
-  .card {
-    width: 100%; /* Full width on very small screens */
-    padding: 20px; /* Further reduce padding */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Lessen shadow for simplicity */
-  }
-
-  .card img {
-    max-height: 180px; /* Reduce max image height */
-  }
-
-  .card h3 {
-    font-size: 1.2rem; /* Smaller heading font size */
-  }
-
-  .card p {
-    font-size: 0.9rem; /* Smaller text font size */
-  }
-
-  .banner img {
-    margin-top: 2rem; /* Further reduce top margin */
-    border-radius: 30% 70% 60% 40% / 50% 50% 50% 50%; /* Simplify shape */
-  }
-
-  .banner h3 {
-    font-size: 1.5rem; /* Further reduce font size */
-    top: 16rem; /* Adjust position */
-    left: 1.5rem; /* Move closer to the edge */
-  }
-
-  .banner p {
-    font-size: 1rem; /* Further reduce font size */
-    width: 80%; /* Full width for readability */
-    top: 18rem; /* Adjust position */
-    left: 1.5rem; /* Move closer to the edge */
-  }
-
-  .list {
-    padding: 5rem; /* Further reduce padding */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center;
-  }
-
-  .item {
-    margin: 1rem 0; /* Provide vertical spacing */
-    width: 90%; /* Full-width items on small screens */
-  }
-
-  .product {
-    width: 100%; /* Adjust to container width */
-    height: auto; /* Let height adjust to content */
-    padding: 20px; /* Reduce padding further */
-  }
-
-  .product img {
-    max-height: 70px; /* Scale down image */
-  }
-
-  .product h3 {
-    font-size: 0.85rem; /* Smaller font */
-  }
-
-  .product p {
+  .carousel.showDetail .list .item:nth-child(2) .detail .specs {
     font-size: 0.7rem;
   }
 
-  .vid-sec {
-    padding-top: 2rem;
+  .carousel.showDetail .list .item:nth-child(2) .detail .specs div {
+    margin: 10px 0 0 0;
+    transform: translateX(0);
   }
 
-  .vid-sec h2 {
-    font-size: 2rem; /* Smaller heading for extra-small screens */
-    padding: 0 1rem; /* Add side padding to avoid edge overflow */
+  .carousel.showDetail .list .item:nth-child(2) .checkout button {
+    font-size: 0.7rem;
   }
 
-  .vid-sec video {
-    padding-top: 1.5rem;
-    border-radius: 5px;
+  .carousel::before {
+    width: 300px;
+    height: 170px;
+    top: 40%;
+    left: 10%;
+    opacity: 1;
   }
 
-  .key-features {
-    margin-top: 20px; /* Reduce margin for smaller screens */
+  .carousel.showDetail::before {
+    transform: translate(0, -80%) rotate(60deg);
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  /* Glass Window */
+  .glass-tab {
+    padding: 20px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .card img {
+    max-height: 180px;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  /* Main Banner */
+  .banner img {
+    margin-top: 0;
+  }
+
+  .banner h3 {
+    font-size: 1.5rem;
+    top: 16rem;
+    left: 1.5rem;
+  }
+
+  .banner p {
+    font-size: 1rem;
+    width: 80%;
+    top: 18rem;
+    left: 1.5rem;
+  }
+
+  /* Animated List */
+  .list {
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+  }
+
+  .product {
+    padding: 20px;
+    width: 100px;
+    height: 180px;
+  }
+
+  .product img {
+    max-height: 80px;
+    margin-bottom: 5px;
+  }
+
+  .product h3 {
+    font-size: 0.7rem;
+  }
+
+  .product p {
+    font-size: 0.6rem;
   }
 
   .shop-details {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    padding: 20px 10px 0 10px; /* Adjust padding */
-    gap: 10px; /* Reduce gap between items */
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px 0 10px;
+    gap: 10px;
   }
 
   .shop-details .attribute {
-    max-width: 100%; /* Use full width */
-    padding: 20px 10px; /* Reduce padding for a better fit */
+    max-width: 100%;
+    padding: 20px 10px;
     text-align: center;
   }
 
   .shop-details .attribute img {
-    height: 80px; /* Scale down image */
-    margin-bottom: 15px; /* Reduce spacing under image */
+    height: 80px;
+    margin-bottom: 15px;
   }
 
   .shop-details .attribute h3 {
-    font-size: 1.2rem; /* Slightly smaller heading */
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 0;
   }
 
   .shop-details .attribute p {
-    font-size: 0.9rem; /* Smaller text */
-    margin-bottom: 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Newsletter */
+  .newsletter .black {
+    max-width: 350px;
+  }
+
+  .newsletter h2 {
+    font-size: 1.5rem;
+  }
+
+  .newsletter input[type="email"] {
+    max-width: 340px;
   }
 }

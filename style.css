@@ -1108,7 +1108,6 @@ footer p:hover {
     height: 500px;
     top: 50%;
     left: 20%;
-    opacity: 0.8;
   }
 
   .carousel.showDetail::before {
@@ -1431,7 +1430,6 @@ footer p:hover {
     height: 170px;
     top: 40%;
     left: 10%;
-    opacity: 1;
   }
 
   .carousel.showDetail::before {

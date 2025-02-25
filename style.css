@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap");
 
 * {
   padding: 0;
@@ -125,8 +125,7 @@ header {
 }
 
 .carousel .list .item:nth-child(n + 6) {
-  opacity: 0;
-  pointer-events: none;
+  display: none;
 }
 
 .carousel .list .item:nth-child(2) {
